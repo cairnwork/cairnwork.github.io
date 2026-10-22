@@ -23,7 +23,7 @@ cairnwork demo
 
 No `curl | sh` on the main path. If you do not have `uv`, a readable fallback script is published here; read it and check the digest before running it:
 
-- [install.sh](install.sh) — sha256 `6699d02f8e933c068ef43b7375f8c928c230bfa9a72231f165dc827407437355` ([install.sh.sha256](install.sh.sha256))
+- [install.sh](install.sh) — sha256 `52b7bcd146bf5864d05844571cdb85fa59a82e6cbe58b6dfa016c81085dda673` ([install.sh.sha256](install.sh.sha256))
 
 - Source: <https://github.com/cairnwork/cairnwork>
 - Security policy: <https://github.com/cairnwork/cairnwork/blob/main/SECURITY.md>
