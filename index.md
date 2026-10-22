@@ -12,7 +12,7 @@ A verified run's notary record can be turned into an in-toto DSSE Ed25519 signed
 
 We publish only measured or drilled results. The first preregistered A/B (N=28) was a tie: 12/28 adoptable in both arms, the filter never acted ([2026-10-22-ab-run2](https://github.com/cairnwork/cairnwork/blob/main/docs/results/2026-10-22-ab-run2.md)). The deferred-acceptance detector blocked 5 of 7 real wrong patches (too few to conclude), 205/205 rule-based mutants, and falsely blocked 0 of 83 real correct patches ([2026-10-22-filter-mechanism](https://github.com/cairnwork/cairnwork/blob/main/docs/results/2026-10-22-filter-mechanism.md)).
 
-**What it does not claim:** a higher model success rate (strong models rarely fail on small bugs); a replacement for human code review; being an interactive coding agent or assistant; defect-free code after a pass (an independently reviewed case, Nexus-new#2813, was VERIFIED and still had a bypassable security hole; verification is evidence, not proof).
+**What it does not claim:** a higher model success rate (strong models rarely fail on small bugs); a replacement for human code review; being an interactive coding agent or assistant; defect-free code after a pass (an independently reviewed case, Nexus-new#2813 fixed by PR #2856, was VERIFIED and its refusal check could still be bypassed; verification is evidence, not proof).
 
 ## Try it in five minutes
 
