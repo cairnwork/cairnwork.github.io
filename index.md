@@ -4,13 +4,15 @@ title: Cairnwork
 
 # Cairnwork
 
-A delivery verification layer for AI coding agents. Not an agent, not a PR reviewer.
+Cairnwork is an execution gate for AI coding agents. A change counts as complete only after passing deferred tests the worker never saw, run in an isolated sandbox, with an offline-verifiable signed attestation. Evidence of completion, not a higher success rate.
 
-An agent fixes a small bug in an isolated clone. The tests that judge the fix are withheld from the agent, applied afterwards, and run by a sandboxed verifier under a dedicated OS account. An independent notary service records the verdict. Only a `VERIFIED` verdict opens a draft pull request.
+A verified run's notary record can be turned into an in-toto DSSE Ed25519 signed attestation (`cairnwork-attest statement --sign`) that binds the verdict to the exact candidate commit. Anyone can verify it offline with `cairnwork-attest verify` using only the public key and the local git objects (see [docs/ATTESTATION.md](https://github.com/cairnwork/cairnwork/blob/main/docs/ATTESTATION.md)), or check it on pull requests with the [cairnwork/verify-action](https://github.com/cairnwork/verify-action) GitHub Action (the bundle travels in git notes under `refs/notes/cairnwork`; the action needs `contents: read` only and is pinned by commit).
 
-**Status:** pilot (2026-10-20 → 2026-11-16). Apache-2.0. Python ≥ 3.11. macOS (Seatbelt) and Linux (bubblewrap) sandboxes, each with a dedicated verifier account; install and demo verified on macOS and Debian 13.
+**Status:** pilot (2026-10-20 → 2026-11-16). Apache-2.0. Python ≥ 3.11. macOS (Seatbelt) and Linux (bubblewrap) sandboxes, each with a dedicated verifier account; signed attestation and offline verification available; install and demo verified on macOS, Ubuntu CI and Debian 13. Known limit: the deferred test commit currently lives on a branch of the target repository; a non-public location and a worker-only account are in progress.
 
-We publish only measured or drilled results. There are no effect numbers yet; a preregistered A/B evaluation is in progress.
+We publish only measured or drilled results. The first preregistered A/B (N=28) was a tie: 12/28 adoptable in both arms, the filter never acted ([2026-10-22-ab-run2](https://github.com/cairnwork/cairnwork/blob/main/docs/results/2026-10-22-ab-run2.md)). The deferred-acceptance detector blocked 5 of 7 real wrong patches (too few to conclude), 205/205 rule-based mutants, and falsely blocked 0 of 83 real correct patches ([2026-10-22-filter-mechanism](https://github.com/cairnwork/cairnwork/blob/main/docs/results/2026-10-22-filter-mechanism.md)).
+
+**What it does not claim:** a higher model success rate (strong models rarely fail on small bugs); a replacement for human code review; being an interactive coding agent or assistant; defect-free code after a pass (an independently reviewed case, Nexus-new#2813, was VERIFIED and still had a bypassable security hole; verification is evidence, not proof).
 
 ## Try it in five minutes
 
