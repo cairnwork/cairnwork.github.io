@@ -15,15 +15,15 @@ We publish only measured or drilled results. There are no effect numbers yet; a 
 ## Try it in five minutes
 
 ```sh
-uv tool install --from git+https://github.com/James3014/cairnwork.git cairnwork
+uv tool install --from git+https://github.com/cairnwork/cairnwork.git cairnwork
 cairnwork demo
 ```
 
-`cairnwork demo` needs no GitHub, no AI worker and no API key: it builds a throwaway project with a seeded bug, applies a ready-made one-line fix as the candidate, and runs it through the governed verification until the notary records `VERIFIED`. Full steps: [docs/QUICKSTART.md](https://github.com/James3014/cairnwork/blob/main/docs/QUICKSTART.md).
+`cairnwork demo` needs no GitHub, no AI worker and no API key: it builds a throwaway project with a seeded bug, applies a ready-made one-line fix as the candidate, and runs it through the governed verification until the notary records `VERIFIED`. Full steps: [docs/QUICKSTART.md](https://github.com/cairnwork/cairnwork/blob/main/docs/QUICKSTART.md).
 
 No `curl | sh` on the main path. If you do not have `uv`, a readable fallback script is published here; read it and check the digest before running it:
 
 - [install.sh](install.sh) — sha256 `6699d02f8e933c068ef43b7375f8c928c230bfa9a72231f165dc827407437355` ([install.sh.sha256](install.sh.sha256))
 
-- Source: <https://github.com/James3014/cairnwork>
-- Security policy: <https://github.com/James3014/cairnwork/blob/main/SECURITY.md>
+- Source: <https://github.com/cairnwork/cairnwork>
+- Security policy: <https://github.com/cairnwork/cairnwork/blob/main/SECURITY.md>
