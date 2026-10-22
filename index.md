@@ -8,7 +8,7 @@ A delivery verification layer for AI coding agents. Not an agent, not a PR revie
 
 An agent fixes a small bug in an isolated clone. The tests that judge the fix are withheld from the agent, applied afterwards, and run by a sandboxed verifier under a dedicated OS account. An independent notary service records the verdict. Only a `VERIFIED` verdict opens a draft pull request.
 
-**Status:** pilot (2026-10-20 → 2026-11-16). Apache-2.0. Python ≥ 3.11. macOS sandbox today, Linux in progress.
+**Status:** pilot (2026-10-20 → 2026-11-16). Apache-2.0. Python ≥ 3.11. macOS (Seatbelt) and Linux (bubblewrap) sandboxes, each with a dedicated verifier account; install and demo verified on macOS and Debian 13.
 
 We publish only measured or drilled results. There are no effect numbers yet; a preregistered A/B evaluation is in progress.
 
@@ -19,7 +19,7 @@ uv tool install --from git+https://github.com/cairnwork/cairnwork.git cairnwork
 cairnwork demo
 ```
 
-`cairnwork demo` needs no GitHub, no AI worker and no API key: it builds a throwaway project with a seeded bug, applies a ready-made one-line fix as the candidate, and runs it through the governed verification until the notary records `VERIFIED`. Full steps: [docs/QUICKSTART.md](https://github.com/cairnwork/cairnwork/blob/main/docs/QUICKSTART.md).
+`cairnwork demo` needs no GitHub, no AI worker and no API key: it builds a throwaway project with a seeded bug, applies a ready-made one-line fix as the candidate, and runs it through the governed verification until the notary records `VERIFIED`. If `cairnwork` is not found right after installing, open a new shell or run `export PATH="$HOME/.local/bin:$PATH"`. Full steps: [docs/QUICKSTART.md](https://github.com/cairnwork/cairnwork/blob/main/docs/QUICKSTART.md).
 
 No `curl | sh` on the main path. If you do not have `uv`, a readable fallback script is published here; read it and check the digest before running it:
 
