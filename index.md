@@ -31,3 +31,4 @@ No `curl | sh` on the main path. If you do not have `uv`, a readable fallback sc
 
 - Source: <https://github.com/cairnwork/cairnwork>
 - Security policy: <https://github.com/cairnwork/cairnwork/blob/main/SECURITY.md>
+- How we measure agent tools without fooling ourselves (article, pre-registration template, checklist, symmetry checker): <https://github.com/cairnwork/dont-fool-yourself>
