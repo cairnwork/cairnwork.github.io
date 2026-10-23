@@ -36,3 +36,4 @@ Related projects by the same team (separate repositories, not part of Cairnwork)
 
 - [dont-fool-yourself](https://github.com/cairnwork/dont-fool-yourself): how we A/B agent tools without fooling ourselves (article, pre-registration template, checklist, symmetry checker).
 - [token-autopsy](https://github.com/cairnwork/token-autopsy): a separate zero-model CLI that shows where your Claude Code tokens go (aggregates only, no network).
+- [pr-regret](https://github.com/cairnwork/pr-regret): a separate zero-model CLI that measures how often merged PRs leave a trace of regret (a revert or a named fix within 7 days). It is a heuristic trace rate, not a true failure rate and not a lower bound; the report explains why.
